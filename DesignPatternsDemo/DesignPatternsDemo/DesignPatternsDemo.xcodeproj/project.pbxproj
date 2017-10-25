@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C4047A81FA02B4300C6AE9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C87DF441F9DDB47002ECEDC /* DesignPatternsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C87DF471F9DDB47002ECEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C87DF481F9DDB47002ECEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		9C87DF791F9DDBFA002ECEDC /* SimpleFactory */ = {
 			isa = PBXGroup;
 			children = (
+				9C4047A81FA02B4300C6AE9B /* README.md */,
 			);
 			path = SimpleFactory;
 			sourceTree = "<group>";
