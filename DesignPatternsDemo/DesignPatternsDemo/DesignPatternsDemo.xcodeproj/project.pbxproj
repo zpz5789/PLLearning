@@ -102,6 +102,7 @@
 		9C87DF461F9DDB47002ECEDC /* DesignPatternsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9CF0C3A71FA1C2B800E79E99 /* Structural Pattern */,
 				9C87DF7F1F9DDCC4002ECEDC /* Creational Pattern */,
 				9C87DF471F9DDB47002ECEDC /* AppDelegate.h */,
 				9C87DF481F9DDB47002ECEDC /* AppDelegate.m */,
@@ -188,6 +189,53 @@
 				9C87DF7E1F9DDCA8002ECEDC /* Builder */,
 			);
 			path = "Creational Pattern";
+			sourceTree = "<group>";
+		};
+		9CF0C3A71FA1C2B800E79E99 /* Structural Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				9CF0C3AC1FA1C35300E79E99 /* Proxy Pattern */,
+				9CF0C3AB1FA1C33D00E79E99 /* Decorator Pattern */,
+				9CF0C3AA1FA1C32C00E79E99 /* Composite Pattern */,
+				9CF0C3A91FA1C32000E79E99 /* Adapter Pattern */,
+				9CF0C3A81FA1C2FD00E79E99 /* Facade Pattern */,
+			);
+			path = "Structural Pattern";
+			sourceTree = "<group>";
+		};
+		9CF0C3A81FA1C2FD00E79E99 /* Facade Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Facade Pattern";
+			sourceTree = "<group>";
+		};
+		9CF0C3A91FA1C32000E79E99 /* Adapter Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Adapter Pattern";
+			sourceTree = "<group>";
+		};
+		9CF0C3AA1FA1C32C00E79E99 /* Composite Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Composite Pattern";
+			sourceTree = "<group>";
+		};
+		9CF0C3AB1FA1C33D00E79E99 /* Decorator Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Decorator Pattern";
+			sourceTree = "<group>";
+		};
+		9CF0C3AC1FA1C35300E79E99 /* Proxy Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Proxy Pattern";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
