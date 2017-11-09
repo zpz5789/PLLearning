@@ -37,7 +37,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifer];
     }
-    cell.textLabel.text = [_patternNames objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,[_patternNames objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -51,16 +51,16 @@
                        @"Singleton",
                        @"Prototype",
                        @"Builder",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
+                       @"State",
+                       @"Observer",
+                       @"Mediator",
+                       @"Command",
+                       @"Chain of Responsibility",
+                       @"Proxy Pattern",
+                       @"Decorator",
+                       @"Composite",
+                       @"Adapter",
+                       @"Facade",
                        @"",
                        @"",
                        ];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4698921FB4294F007E6F69 /* FacadePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4698911FB4294F007E6F69 /* FacadePattern.m */; };
 		9C87DF491F9DDB47002ECEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C87DF481F9DDB47002ECEDC /* AppDelegate.m */; };
 		9C87DF4C1F9DDB47002ECEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C87DF4B1F9DDB47002ECEDC /* ViewController.m */; };
 		9C87DF4F1F9DDB47002ECEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87DF4D1F9DDB47002ECEDC /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		9C4047A81FA02B4300C6AE9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9C4698901FB4294F007E6F69 /* FacadePattern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacadePattern.h; sourceTree = "<group>"; };
+		9C4698911FB4294F007E6F69 /* FacadePattern.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacadePattern.m; sourceTree = "<group>"; };
 		9C87DF441F9DDB47002ECEDC /* DesignPatternsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C87DF471F9DDB47002ECEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C87DF481F9DDB47002ECEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +82,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C4698941FB42CA2007E6F69 /* Behavioral Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				9C46989F1FB42F2F007E6F69 /* Strategy Pattern */,
+				9C46989E1FB42F15007E6F69 /* Visitor Pattern */,
+				9C46989D1FB42F0B007E6F69 /* Template Pattern */,
+				9C46989C1FB42EFA007E6F69 /* Memento Pattern */,
+				9C4698991FB42D8F007E6F69 /* State Pattern */,
+				9C4698981FB42D32007E6F69 /* Observer Pattern */,
+				9C4698971FB42D24007E6F69 /* Mediator Pattern */,
+				9C4698961FB42D18007E6F69 /* Command Pattern */,
+				9C4698951FB42CFC007E6F69 /* Chain of Responsibility Pattern */,
+			);
+			path = "Behavioral Pattern";
+			sourceTree = "<group>";
+		};
+		9C4698951FB42CFC007E6F69 /* Chain of Responsibility Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Chain of Responsibility Pattern";
+			sourceTree = "<group>";
+		};
+		9C4698961FB42D18007E6F69 /* Command Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Command Pattern";
+			sourceTree = "<group>";
+		};
+		9C4698971FB42D24007E6F69 /* Mediator Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Mediator Pattern";
+			sourceTree = "<group>";
+		};
+		9C4698981FB42D32007E6F69 /* Observer Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Observer Pattern";
+			sourceTree = "<group>";
+		};
+		9C4698991FB42D8F007E6F69 /* State Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "State Pattern";
+			sourceTree = "<group>";
+		};
+		9C46989A1FB42EAB007E6F69 /* Flyweight Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Flyweight Pattern";
+			sourceTree = "<group>";
+		};
+		9C46989B1FB42EBB007E6F69 /* Bridge Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Bridge Pattern";
+			sourceTree = "<group>";
+		};
+		9C46989C1FB42EFA007E6F69 /* Memento Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Memento Pattern";
+			sourceTree = "<group>";
+		};
+		9C46989D1FB42F0B007E6F69 /* Template Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Template Pattern";
+			sourceTree = "<group>";
+		};
+		9C46989E1FB42F15007E6F69 /* Visitor Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Visitor Pattern";
+			sourceTree = "<group>";
+		};
+		9C46989F1FB42F2F007E6F69 /* Strategy Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Strategy Pattern";
+			sourceTree = "<group>";
+		};
 		9C87DF3B1F9DDB47002ECEDC = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +198,7 @@
 		9C87DF461F9DDB47002ECEDC /* DesignPatternsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9C4698941FB42CA2007E6F69 /* Behavioral Pattern */,
 				9CF0C3A71FA1C2B800E79E99 /* Structural Pattern */,
 				9C87DF7F1F9DDCC4002ECEDC /* Creational Pattern */,
 				9C87DF471F9DDB47002ECEDC /* AppDelegate.h */,
@@ -194,6 +291,8 @@
 		9CF0C3A71FA1C2B800E79E99 /* Structural Pattern */ = {
 			isa = PBXGroup;
 			children = (
+				9C46989B1FB42EBB007E6F69 /* Bridge Pattern */,
+				9C46989A1FB42EAB007E6F69 /* Flyweight Pattern */,
 				9CF0C3AC1FA1C35300E79E99 /* Proxy Pattern */,
 				9CF0C3AB1FA1C33D00E79E99 /* Decorator Pattern */,
 				9CF0C3AA1FA1C32C00E79E99 /* Composite Pattern */,
@@ -206,6 +305,8 @@
 		9CF0C3A81FA1C2FD00E79E99 /* Facade Pattern */ = {
 			isa = PBXGroup;
 			children = (
+				9C4698901FB4294F007E6F69 /* FacadePattern.h */,
+				9C4698911FB4294F007E6F69 /* FacadePattern.m */,
 			);
 			path = "Facade Pattern";
 			sourceTree = "<group>";
@@ -371,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4698921FB4294F007E6F69 /* FacadePattern.m in Sources */,
 				9C87DF4C1F9DDB47002ECEDC /* ViewController.m in Sources */,
 				9C87DF571F9DDB47002ECEDC /* main.m in Sources */,
 				9C87DF491F9DDB47002ECEDC /* AppDelegate.m in Sources */,
