@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MultithreadingDemo/MultithreadingDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DesignPatternsDemo/DesignPatternsDemo/DesignPatternsDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:AnimationDemo/AnimationDemo.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:RuntimeDemo/RuntimeDemo.xcodeproj">
    </FileRef>
 </Workspace>

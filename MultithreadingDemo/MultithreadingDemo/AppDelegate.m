@@ -1,13 +1,13 @@
 //
 //  AppDelegate.m
-//  DesignPatternsDemo
+//  MultithreadingDemo
 //
-//  Created by zpz on 2017/10/23.
-//  Copyright © 2017年 zpz. All rights reserved.
+//  Created by zpz on 2018/8/29.
+//  Copyright © 2018年 zpz. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <AFNetworking.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     // Override point for customization after application launch.
     return YES;
 }

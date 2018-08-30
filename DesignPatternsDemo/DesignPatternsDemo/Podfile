@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DesignPatternsDemo' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for DesignPatternsDemo
+	pod 'AFNetworking'
+  target 'DesignPatternsDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'DesignPatternsDemoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
