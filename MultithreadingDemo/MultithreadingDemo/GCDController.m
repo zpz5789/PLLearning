@@ -8,8 +8,10 @@
 
 #import "GCDController.h"
 
-@interface GCDController ()
+static NSString *const cellID = @"gcdCellID";
 
+@interface GCDController ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) NSArray *dataSource;
 @end
 
 @implementation GCDController
@@ -17,13 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self creatStyle];
-//    [self syncSerial];
-    [self asyncConcurrent];
+    _dataSource = @[@"创建队列",@"同步串行" ,@"同步并行",@"异步串行",@"异步并行",@"主线程同步",@"主线程异步",@"栅栏函数",@"GCD队列组",@"其他常用函数",@"信号量",@"倒计时"];
+    // 概念
+//    [self deadLock];
+    
     // Do any additional setup after loading the view.
 }
 
-- (void)creatStyle
+#pragma mark - 创建GCD队列
+- (void)creatQueue
 {
     // 主队列
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
@@ -44,10 +48,9 @@
     dispatch_async(globalQueue, ^{
         NSLog(@"globalQueue 异步执行");
     });
-    
 }
 
-#pragma mark - 对列多种组合方式
+#pragma mark - 同步异步串行并发多种组合方式
 // 串行同步
 - (void)syncSerial
 {
@@ -98,7 +101,26 @@
 // 并发同步
 - (void)syncConcurrent
 {
+    // 并发队列
+    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
     
+    // 同步执行
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"并发同步1   %@",[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"并发同步1   %@",[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"并发同步1   %@",[NSThread currentThread]);
+        }
+    });
+
 }
 
 // 并发异步
@@ -128,13 +150,288 @@
 // 主线程同步(死锁)
 - (void)syncOnMainQueue
 {
-    
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    // 同步执行
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"主线程并发同步1   %@",[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"主线程并发同步1   %@",[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"主线程并发同步1   %@",[NSThread currentThread]);
+        }
+    });
+    // 结果：发生死锁
+#warning 待完善
+    // 原因：
+
 }
 
 // 主线程异步
 - (void)asyncOnMainQueue
 {
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    // 异步执行
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 3; i++) {
+            NSLog(@"主线程异步1   %@",[NSThread currentThread]);
+        }
+    });
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 3; i++) {
+            NSLog(@"主线程异步2   %@",[NSThread currentThread]);
+        }
+    });
+}
+
+#pragma mark - 线程间通信
+- (void)communicationBetweenThread
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 耗时操作放在这里，例如下载图片。（运用线程休眠两秒来模拟耗时操作）
+        [NSThread sleepForTimeInterval:2];
+        NSString *picURLStr = @"https://upload.jianshu.io/users/upload_avatars/644999/0ba0d431ecac.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240";
+        NSURL *picURL = [NSURL URLWithString:picURLStr];
+        NSData *picData = [NSData dataWithContentsOfURL:picURL];
+        UIImage *image = [UIImage imageWithData:picData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 主线程UI更新操作
+            
+        });
+    });
+}
+
+#pragma mark - GCD栅栏 栅栏函数需要注意点 应用
+- (void)barrierGCD
+{
+    // 不能使用全局并发队列，否则失去意义
+    // 在同步栅栏时栅栏函数在主线程中执行,而异步栅栏中开辟了子线程栅栏函数在子线程中执行
+    // 在使用栅栏函数时.使用自定义队列才有意义,如果用的是串行队列或者系统提供的全局并发队列,这个栅栏函数的作用等同于一个同步函数的作用
+    // dispatch_barrier_sync: Submits a barrier block object for execution and waits until that block completes.(提交一个栅栏函数在执行中,它会等待栅栏函数执行完)
+    // dispatch_barrier_async: Submits a barrier block for asynchronous execution and returns immediately.(提交一个栅栏函数在异步执行中,它会立马返回)
+
+//    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    NSLog(@"start");
+    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 3; i++) {
+            NSLog(@"栅栏： 并发异步任务1 %@",[NSThread currentThread]);
+        }
+    });
+    NSLog(@"after1");
+    NSLog(@"after1-1");
+    NSLog(@"after1-2");
+    NSLog(@"after1-3");
+
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 3; i++) {
+            NSLog(@"栅栏： 并发异步任务2 %@",[NSThread currentThread]);
+        }
+    });
+    NSLog(@"after2");
+
+    // dispatch_barrier_sync -> 2018-08-30 15:55:30.026497+0800 MultithreadingDemo[8466:1016098] ------------barrier------------<NSThread: 0x6040000622c0>{number = 1, name = main}
+
+    dispatch_barrier_sync(queue, ^{
+        NSLog(@"------------barrier------------%@", [NSThread currentThread]);
+    });
+    NSLog(@"after barrier");
+
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 3; i++) {
+            NSLog(@"栅栏： 并发异步任务3 %@",[NSThread currentThread]);
+        }
+    });
+    NSLog(@"after 3");
+
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 3; i++) {
+            NSLog(@"栅栏： 并发异步任务4 %@",[NSThread currentThread]);
+        }
+    });
+    NSLog(@"after 4 end");
+
+    // 执行顺序 1 2 随机 但是 3 4 一定是在 1 2 barrier 后面
+    // 应用 多读单写模型
+}
+
+#pragma mark - GCD队列组
+- (void)groupGCD
+{
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"队列组：有一个耗时操作1完成！");
+    });
     
+    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"队列组：有一个耗时操作2完成！");
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"队列组：前面的耗时操作都完成了，回到主线程进行相关操作");
+    });
+    
+#warning 待完善
+    // 应用：常应用于单页面多网络请求场景，多个网络请求执行完毕再刷新UI、
+    // 下载一个大的文件，分块下载，全部下载完成后再合成一个文件 再比如同时下载多个图片，监听全部下载完后的动作
+    // example
+    dispatch_group_t netWorkGroup = dispatch_group_create();
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"https://upload.jianshu.io/users/upload_avatars/644999/0ba0d431ecac.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240"];
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@ %@ %@ %@", data, response, error, [NSThread currentThread]);
+    }];
+    [task resume];
+}
+
+#pragma mark - 其他常用函数
+- (void)otherFunctionGCD
+{
+    // 延时执行
+    // 主线程延时 1秒执行
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+    });
+    
+#warning 待完善
+    // 拓展：GCD定时器 与 其他定时器的区别和联系
+    
+    // 一次性执行代码
+    // 应用：常用于单例生成、 load方法中method swizzle等整个应用程序生命周期只需一次性执行的地方
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // input一次性执行的代码
+    });
+    
+    
+    // 快速迭代
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    // dispatch_apply几乎同时遍历多个数字
+    dispatch_apply(7, queue, ^(size_t index) {
+        NSLog(@"dispatch_apply：%zd======%@",index, [NSThread currentThread]);
+    });
+    
+}
+
+#pragma mark - 死锁
+- (void)deadLockGCD
+{
+#warning message
+    /// 怎么解释，有点疑问。
+    dispatch_queue_t queue = dispatch_queue_create("com.test.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 10; i ++) {
+            NSLog(@"1. %@",[NSThread currentThread]);
+        }
+        dispatch_sync(queue, ^{
+            for (int i = 0; i < 5; i ++) {
+                NSLog(@"2. %@",[NSThread currentThread]);
+            }
+        });
+        for (int i = 0; i < 10; i ++) {
+            NSLog(@"3. %@",[NSThread currentThread]);
+        }
+
+    });
+    // 1 执行完之后，再执行2。
+}
+
+#pragma mark - 信号量
+- (void)semaphoreGCD
+{
+    /*
+     dispatch_semaphore_create(1);//创建1个信号
+     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//当计数值大于1时，或者在待机中计数值大于1时，对该计数减1并且返回。
+     dispatch_semaphore_signal(semaphore);//对计数值加1
+     */
+     // 应用： 解决线程同步问题。加锁
+}
+
+#pragma mark - 倒计时定时器
+- (void)sourceTimerGCD
+{
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 15ULL*NSEC_PER_SEC), DISPATCH_TIME_FOREVER, 1ull*NSEC_PER_SEC);
+    
+    dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"wake up");
+        dispatch_source_cancel(timer);
+    });
+    
+    dispatch_source_set_cancel_handler(timer, ^{
+        NSLog(@"canceled");
+    });
+    
+    dispatch_resume(timer);
+    // 应用：定时器倒计时
+}
+
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.textLabel.text = [self.dataSource objectAtIndex:indexPath.row];
+    return cell;
+}
+
+#pragma mark - UITableViewDategate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //@"创建队列",@"同步串行" ,@"同步并行",@"异步串行",@"异步并行",@"主线程同步",@"主线程异步"
+    switch (indexPath.row) {
+        case 0:
+            [self creatQueue];
+            break;
+        case 1:
+            [self syncSerial];
+            break;
+        case 2:
+            [self syncConcurrent];
+            break;
+        case 3:
+            [self asyncSerial];
+            break;
+        case 4:
+            [self asyncConcurrent];
+            break;
+        case 5:
+            [self syncOnMainQueue];
+            break;
+        case 6:
+            [self asyncOnMainQueue];
+            break;
+        case 7:
+            [self barrierGCD];
+            break;
+        case 8:
+            [self groupGCD];
+            break;
+        case 9:
+            [self otherFunctionGCD];
+            break;
+        case 10:
+            [self semaphoreGCD];
+            break;
+        case 11:
+            [self sourceTimerGCD];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
