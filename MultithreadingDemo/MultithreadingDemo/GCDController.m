@@ -27,6 +27,14 @@ static NSString *const cellID = @"gcdCellID";
     // 任务的管理方式
     // 任务的执行方式
     // 从什么样的队列中拿出任务在xxxx线程中按照什么执行方式来执行。
+    /*
+     同步任务，使用dispatch_sync将任务加入队列。将同步任务加入串行队列，会顺序执行，一般不这样做并且在一个任务未结束时调起其它同步任务会死锁。将同步任务加入并行队列，会顺序执行，但是也没什么意义。
+     异步任务，使用dispatch_async将任务加入队列。将异步任务加入串行队列，会顺序执行，并且不会出现死锁问题。将异步任务加入并行队列，会并行执行多个任务，这也是我们最常用的一种方式。
+     
+     1、创建一个队列（串行队列或并发队列） 2、将任务追加到任务的等待队列中，然后系统就会根据任务类型执行任务（同步执行或异步执行）
+     
+
+     */
 //    [self deadLock];
     
     // Do any additional setup after loading the view.
@@ -358,6 +366,53 @@ static NSString *const cellID = @"gcdCellID";
      dispatch_semaphore_signal(semaphore);//对计数值加1
      */
      // 应用： 解决线程同步问题。加锁
+    
+    // dispatch_semaphore_signal有两类用法：a、解决同步问题；b、解决有限资源访问（资源为1，即互斥）问题。
+    // dispatch_semaphore_wait，若semaphore计数为0则等待，大于0则使其减1。
+    // dispatch_semaphore_signal使semaphore计数加1。
+    
+    // a、同步问题：输出肯定为1、2、3。
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_semaphore_t semaphore1 = dispatch_semaphore_create(1);
+    dispatch_semaphore_t semaphore2 = dispatch_semaphore_create(0);
+    dispatch_semaphore_t semaphore3 = dispatch_semaphore_create(0);
+
+    dispatch_async(queue, ^{
+        // 任务1
+        dispatch_semaphore_wait(semaphore1, DISPATCH_TIME_FOREVER);
+        NSLog(@"1\n");
+        dispatch_semaphore_signal(semaphore2);
+        // 如果不加这句会崩溃 内存管理问题
+        dispatch_semaphore_signal(semaphore1);
+    });
+    
+    dispatch_async(queue, ^{
+        // 任务2
+        dispatch_semaphore_wait(semaphore2, DISPATCH_TIME_FOREVER);
+        NSLog(@"2\n %@",semaphore1);
+        dispatch_semaphore_signal(semaphore3);
+//        dispatch_semaphore_signal(semaphore2);
+    });
+    
+    dispatch_async(queue, ^{
+        // 任务3
+        dispatch_semaphore_wait(semaphore3, DISPATCH_TIME_FOREVER);
+        NSLog(@"3\n");
+//        dispatch_semaphore_signal(semaphore3);
+    });
+    
+    
+    // b、有限资源访问问题:for循环看似能创建100个异步任务，实质由于信号限制，最多创建10个异步任务。
+//    dispatch_queue_t queue1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);
+//    for (int i = 0; i < 100; i ++) {
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        dispatch_async(queue1, ^{
+//            // 任务
+//            NSLog(@"%@ %@",@(i), [NSThread currentThread]);
+//            dispatch_semaphore_signal(semaphore);
+//        });
+//    }
 }
 
 #pragma mark - 倒计时定时器
@@ -378,6 +433,12 @@ static NSString *const cellID = @"gcdCellID";
     
     dispatch_resume(timer);
     // 应用：定时器倒计时
+    
+    /*
+     NSTimer缺点、不精确、依赖runLoop、 创建销毁在同一线程上面。存在内存泄露的风险。
+     */
+
+    
 }
 
 
