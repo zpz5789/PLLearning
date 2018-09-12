@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MVC&amp;MVVMDemo/MVC&amp;MVVMDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InterfaceOrientationsStatusBarControlDemo/InterfaceOrientationsStatusBarControlDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MultithreadingDemo/MultithreadingDemo.xcodeproj">
    </FileRef>
    <FileRef
