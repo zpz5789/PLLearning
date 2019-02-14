@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    NSLog(@"%@ - %@",NSStringFromCGSize(size),coordinator);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

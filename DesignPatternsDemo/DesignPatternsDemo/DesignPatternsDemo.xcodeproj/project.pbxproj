@@ -10,6 +10,7 @@
 		4A3CF89555089BED46858029 /* libPods-DesignPatternsDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 532B25C31BFE039DB51B602A /* libPods-DesignPatternsDemoUITests.a */; };
 		847F8720350F5654D51D168D /* libPods-DesignPatternsDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4DAC6D7EA35C3AE016FFEB /* libPods-DesignPatternsDemoTests.a */; };
 		9C4698921FB4294F007E6F69 /* FacadePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4698911FB4294F007E6F69 /* FacadePattern.m */; };
+		9C85C1462153298F004A4CFC /* Factory in Resources */ = {isa = PBXBuildFile; fileRef = 9C85C1452153298F004A4CFC /* Factory */; };
 		9C87DF491F9DDB47002ECEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C87DF481F9DDB47002ECEDC /* AppDelegate.m */; };
 		9C87DF4C1F9DDB47002ECEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C87DF4B1F9DDB47002ECEDC /* ViewController.m */; };
 		9C87DF4F1F9DDB47002ECEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87DF4D1F9DDB47002ECEDC /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		9C4047A81FA02B4300C6AE9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C4698901FB4294F007E6F69 /* FacadePattern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacadePattern.h; sourceTree = "<group>"; };
 		9C4698911FB4294F007E6F69 /* FacadePattern.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacadePattern.m; sourceTree = "<group>"; };
+		9C85C1452153298F004A4CFC /* Factory */ = {isa = PBXFileReference; lastKnownFileType = text; path = Factory; sourceTree = "<group>"; };
 		9C87DF441F9DDB47002ECEDC /* DesignPatternsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C87DF471F9DDB47002ECEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C87DF481F9DDB47002ECEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		9C87DF7A1F9DDC2C002ECEDC /* FactoryMethod */ = {
 			isa = PBXGroup;
 			children = (
+				9C85C1452153298F004A4CFC /* Factory */,
 			);
 			path = FactoryMethod;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C85C1462153298F004A4CFC /* Factory in Resources */,
 				9C87DF541F9DDB47002ECEDC /* LaunchScreen.storyboard in Resources */,
 				9C87DF511F9DDB47002ECEDC /* Assets.xcassets in Resources */,
 				9C87DF4F1F9DDB47002ECEDC /* Main.storyboard in Resources */,

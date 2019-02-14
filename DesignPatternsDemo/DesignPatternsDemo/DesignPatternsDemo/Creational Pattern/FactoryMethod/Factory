@@ -1,0 +1,9 @@
+工厂方法模式定义
+定义一个用于创建对象的接口，让子类决定实例化哪一个类，Factroy Method使一个类的实例化延迟到其子类。
+工厂方法模式与IOC/DI
+IOC---Inversion of Control 控制反转
+DI---Dependency Injection 依赖注入
+平行的类层次结构
+
+设计模式准备知识：UML关系。
+
