@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TimerDemo/TimerDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MVC&amp;MVVMDemo/MVC&amp;MVVMDemo.xcodeproj">
    </FileRef>
    <FileRef
