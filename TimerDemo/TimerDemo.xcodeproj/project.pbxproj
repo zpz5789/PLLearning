@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C3E076B2239F99200F142D3 /* PLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E076A2239F99200F142D3 /* PLProxy.m */; };
+		9C3E076E2239FD4000F142D3 /* PLProxy1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E076D2239FD4000F142D3 /* PLProxy1.m */; };
 		9CAE38682238B15700ED1970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE38672238B15700ED1970 /* AppDelegate.m */; };
 		9CAE386B2238B15700ED1970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE386A2238B15700ED1970 /* ViewController.m */; };
 		9CAE386E2238B15700ED1970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAE386C2238B15700ED1970 /* Main.storyboard */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C3E07692239F99200F142D3 /* PLProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLProxy.h; sourceTree = "<group>"; };
+		9C3E076A2239F99200F142D3 /* PLProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLProxy.m; sourceTree = "<group>"; };
+		9C3E076C2239FD4000F142D3 /* PLProxy1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLProxy1.h; sourceTree = "<group>"; };
+		9C3E076D2239FD4000F142D3 /* PLProxy1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLProxy1.m; sourceTree = "<group>"; };
 		9CAE38632238B15700ED1970 /* TimerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAE38662238B15700ED1970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CAE38672238B15700ED1970 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +127,10 @@
 				9CAE38992238EB7A00ED1970 /* NSTimerController.m */,
 				9CAE389B2238EBAE00ED1970 /* CADisplayLinkController.h */,
 				9CAE389C2238EBAE00ED1970 /* CADisplayLinkController.m */,
+				9C3E07692239F99200F142D3 /* PLProxy.h */,
+				9C3E076A2239F99200F142D3 /* PLProxy.m */,
+				9C3E076C2239FD4000F142D3 /* PLProxy1.h */,
+				9C3E076D2239FD4000F142D3 /* PLProxy1.m */,
 				9CAE389E2238EBC200ED1970 /* GCDTimerController.h */,
 				9CAE389F2238EBC200ED1970 /* GCDTimerController.m */,
 				9CAE38A12238ECCE00ED1970 /* PLTimer.h */,
@@ -284,11 +294,13 @@
 			files = (
 				9CAE38A02238EBC200ED1970 /* GCDTimerController.m in Sources */,
 				9CAE389D2238EBAE00ED1970 /* CADisplayLinkController.m in Sources */,
+				9C3E076B2239F99200F142D3 /* PLProxy.m in Sources */,
 				9CAE389A2238EB7A00ED1970 /* NSTimerController.m in Sources */,
 				9CAE386B2238B15700ED1970 /* ViewController.m in Sources */,
 				9CAE38A32238ECCE00ED1970 /* PLTimer.m in Sources */,
 				9CAE38762238B15900ED1970 /* main.m in Sources */,
 				9CAE38682238B15700ED1970 /* AppDelegate.m in Sources */,
+				9C3E076E2239FD4000F142D3 /* PLProxy1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

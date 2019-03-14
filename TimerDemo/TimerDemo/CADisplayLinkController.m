@@ -7,9 +7,10 @@
 //
 
 #import "CADisplayLinkController.h"
-
+#import "PLProxy.h"
+#import "PLProxy1.h"
 @interface CADisplayLinkController ()
-//@property (nonatomic, strong) CADisplayLink *link;
+@property (nonatomic, strong) CADisplayLink *link;
 @end
 
 @implementation CADisplayLinkController
@@ -18,15 +19,52 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(linkTest)];
-    // @property(nonatomic) NSInteger frameInterval
-    // API_DEPRECATED("preferredFramesPerSecond", ios(3.1, 10.0),
-    // watchos(2.0, 3.0), tvos(9.0, 10.0));
+    [self test];
+    [self test1];
+    [self test2];
     
+
+//   用weakSelf 无法解决 此处内存泄露问题，因为 displayLinkWithTarget:self  内部会对 self进去strong强引用
+//    __weak typeof(self) weakSelf = self;
+    
+    
+//    Runloop *runloop
+    
+    // link 强引用self
+}
+
+
+/**
+ tartet 直接传入self会造成 控制器无法释放， 原因 [NSRunLoop mainRunLoop] 持有 link , link 持有self , self 有强引用，不会调用dealloc , [link invalidate] 方法无法调用， 造成 self 和 link 都无法释放，内存泄露
+ */
+- (void)test
+{
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(linkTest)];
+    self.link = link;
     link.preferredFramesPerSecond = 1;
     [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
 
-    // link 强引用self
+
+/**
+ 通过 引入 PLProxy 中间对象， PLproxy 对象对 self 弱引用，即导航栏pop时 self无强引用，调用dealloc [link invalidate]， link 销毁， self 释放。 其中  PLProxy 对象中用了消息转发
+ */
+- (void)test1
+{
+    PLProxy *proxy = [[PLProxy alloc] init];
+    proxy.target = self;
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:proxy selector:@selector(linkTest)];
+    self.link = link;
+    link.preferredFramesPerSecond = 1;
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)test2
+{
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:[PLProxy1 proxyWithTarget:self] selector:@selector(linkTest)];
+    self.link = link;
+    link.preferredFramesPerSecond = 1;
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)linkTest
@@ -37,15 +75,9 @@
 - (void)dealloc
 {
     NSLog(@"%s",__FUNCTION__);
-//    [self.link invalidate];
+    [self.link invalidate];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-//    if (self.link) {
-//        <#statements#>
-//    }
-}
 /*
 #pragma mark - Navigation
 
