@@ -8,6 +8,8 @@
 
 #import "RunLoopController3.h"
 #import "PLPersistentThread.h"
+#import "PLPermenantThread.h"
+
 
 @interface PLThread1 : NSThread
 @end
@@ -22,8 +24,8 @@
 
 @interface RunLoopController3 ()
 //@property (nonatomic, strong) PLThread1 *thread;
-@property (nonatomic, strong) PLPersistentThread *thread;
-
+//@property (nonatomic, strong) PLPersistentThread *thread;
+@property (nonatomic, strong) PLPermenantThread *thread;
 @property (nonatomic, assign) BOOL isStop;
 @end
 
@@ -46,7 +48,7 @@
 
 - (void)test2
 {
-    self.thread = [[PLPersistentThread alloc] init];
+    self.thread = [[PLPermenantThread alloc] init];
     [self.thread start];
 }
 
