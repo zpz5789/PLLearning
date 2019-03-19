@@ -15,6 +15,10 @@
 		9C3E0791223A519D00F142D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E0790223A519D00F142D3 /* main.m */; };
 		9C3E079B223A519D00F142D3 /* RunLoopDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E079A223A519D00F142D3 /* RunLoopDemoTests.m */; };
 		9C3E07A6223A519D00F142D3 /* RunLoopDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E07A5223A519D00F142D3 /* RunLoopDemoUITests.m */; };
+		9C4294BF2240D6E1007BBF19 /* RunloopController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4294BE2240D6E1007BBF19 /* RunloopController1.m */; };
+		9C4294C52240EBE1007BBF19 /* RunLoopController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4294C42240EBE1007BBF19 /* RunLoopController3.m */; };
+		9C4294C82240EC20007BBF19 /* RunLoopController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4294C72240EC20007BBF19 /* RunLoopController2.m */; };
+		9C4294CB2240F2E0007BBF19 /* PLPersistentThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4294CA2240F2E0007BBF19 /* PLPersistentThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		9C3E07A7223A519D00F142D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C3E07B4223A56F000F142D3 /* CFRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFRunLoop.h; path = "../../../../Desktop/xxxxxx/学习/z3799l/chapter9/MC_RunLoop/MC_RunLoop/AppleSrc/CFRunLoop.h"; sourceTree = "<group>"; };
 		9C3E07B5223A573F00F142D3 /* CFRunLoop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CFRunLoop.c; sourceTree = "<group>"; };
+		9C4294BD2240D6E1007BBF19 /* RunloopController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopController1.h; sourceTree = "<group>"; };
+		9C4294BE2240D6E1007BBF19 /* RunloopController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopController1.m; sourceTree = "<group>"; };
+		9C4294C32240EBE1007BBF19 /* RunLoopController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopController3.h; sourceTree = "<group>"; };
+		9C4294C42240EBE1007BBF19 /* RunLoopController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopController3.m; sourceTree = "<group>"; };
+		9C4294C62240EC20007BBF19 /* RunLoopController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopController2.h; sourceTree = "<group>"; };
+		9C4294C72240EC20007BBF19 /* RunLoopController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopController2.m; sourceTree = "<group>"; };
+		9C4294C92240F2E0007BBF19 /* PLPersistentThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLPersistentThread.h; sourceTree = "<group>"; };
+		9C4294CA2240F2E0007BBF19 /* PLPersistentThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLPersistentThread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +121,14 @@
 				9C3E0782223A519A00F142D3 /* AppDelegate.m */,
 				9C3E0784223A519A00F142D3 /* ViewController.h */,
 				9C3E0785223A519A00F142D3 /* ViewController.m */,
+				9C4294BD2240D6E1007BBF19 /* RunloopController1.h */,
+				9C4294BE2240D6E1007BBF19 /* RunloopController1.m */,
+				9C4294C62240EC20007BBF19 /* RunLoopController2.h */,
+				9C4294C72240EC20007BBF19 /* RunLoopController2.m */,
+				9C4294C32240EBE1007BBF19 /* RunLoopController3.h */,
+				9C4294C42240EBE1007BBF19 /* RunLoopController3.m */,
+				9C4294C92240F2E0007BBF19 /* PLPersistentThread.h */,
+				9C4294CA2240F2E0007BBF19 /* PLPersistentThread.m */,
 				9C3E0787223A519A00F142D3 /* Main.storyboard */,
 				9C3E078A223A519D00F142D3 /* Assets.xcassets */,
 				9C3E078C223A519D00F142D3 /* LaunchScreen.storyboard */,
@@ -266,9 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4294CB2240F2E0007BBF19 /* PLPersistentThread.m in Sources */,
 				9C3E0786223A519A00F142D3 /* ViewController.m in Sources */,
 				9C3E0791223A519D00F142D3 /* main.m in Sources */,
+				9C4294C52240EBE1007BBF19 /* RunLoopController3.m in Sources */,
 				9C3E0783223A519A00F142D3 /* AppDelegate.m in Sources */,
+				9C4294C82240EC20007BBF19 /* RunLoopController2.m in Sources */,
+				9C4294BF2240D6E1007BBF19 /* RunloopController1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,17 +7,46 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
+#import "RunLoopController3.h"
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
 @implementation ViewController
+{
+    NSArray *_dataSource;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _dataSource = @[@"RunLoop理论知识",@"RunLoop与NSTimer",@"RunLoop线程保活"];
 }
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return _dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = [_dataSource objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RunLoopController3 *runLoopCl = [[RunLoopController3 alloc] init];
+    
+    [self.navigationController pushViewController:runLoopCl animated:YES];
+}
+
 
 - (void)tes1
 {
