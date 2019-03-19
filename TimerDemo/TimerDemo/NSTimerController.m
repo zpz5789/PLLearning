@@ -130,7 +130,7 @@
     [_thread start];
 }
 
-#warning 问题
+#warning 问题 子线程内存泄露处理
 - (void)treadSelector
 {
     NSLog(@"%s - %@ ", __FUNCTION__, [NSThread currentThread]);
