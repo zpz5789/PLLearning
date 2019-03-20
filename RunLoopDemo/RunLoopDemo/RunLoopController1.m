@@ -6,13 +6,13 @@
 //  Copyright © 2019 zpz. All rights reserved.
 //
 
-#import "RunloopController1.h"
+#import "RunLoopController1.h"
 
-@interface RunloopController1 ()
+@interface RunLoopController1 ()
 
 @end
 
-@implementation RunloopController1
+@implementation RunLoopController1
 
 - (void)viewDidLoad {
     [super viewDidLoad];

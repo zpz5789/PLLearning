@@ -1,23 +1,21 @@
 //
-//  RunLoopController2.m
+//  RunLoopController0.m
 //  RunLoopDemo
 //
 //  Created by zpz on 2019/3/19.
 //  Copyright © 2019 zpz. All rights reserved.
 //
 
-#import "RunLoopController2.h"
+#import "RunLoopController0.h"
 
-@interface RunLoopController2 ()
-//@property (nonatomic, strong) NSThread *currentThread;
+@interface RunLoopController0 ()
+
 @end
 
-@implementation RunLoopController2
+@implementation RunLoopController0
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-//    self.currentThread = [NSThread alloc];
     // Do any additional setup after loading the view.
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RunLoopController2.h"
 #import "RunLoopController3.h"
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -19,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataSource = @[@"RunLoop理论知识",@"RunLoop与NSTimer",@"RunLoop线程保活"];
+    
+    _dataSource = @[@"RunLoop理论知识",@"RunLoop CFRunLoopObserverRef应用",@"RunLoop NSTimer应用",@"RunLoop线程保活"];
 }
 
 #pragma mark - UITableViewDataSource
@@ -42,9 +44,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RunLoopController3 *runLoopCl = [[RunLoopController3 alloc] init];
     
-    [self.navigationController pushViewController:runLoopCl animated:YES];
+    Class destinationClass = NSClassFromString([NSString stringWithFormat:@"RunLoopController%ld",indexPath.row]);
+    UIViewController *destinationVC = [[destinationClass alloc] init];
+    destinationVC.view.backgroundColor = [UIColor whiteColor];
+    destinationVC.navigationItem.title = [_dataSource objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:destinationVC animated:YES];
 }
 
 

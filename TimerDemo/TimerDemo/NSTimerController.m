@@ -11,10 +11,20 @@
 #import "NSTimer+PL.h"
 #import "NSTimer+Block.h"
 
+@interface PLThread : NSThread
+@end
+@implementation PLThread
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
+
+@end
 @interface NSTimerController ()
 @property (nonatomic, strong) NSTimer *timer;
 
-@property (nonatomic, strong) NSThread *thread;
+@property (nonatomic, strong) PLThread *thread;
 @end
 
 @implementation NSTimerController
@@ -24,8 +34,9 @@
     
 //    [self test];
 //    [self test1];
-    [self test2];
+//    [self test2];
 //    [self test3];
+    [self test4];
 }
 
 
@@ -52,12 +63,15 @@
 //    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
     
     // 3. invocation 方式调用
-//    _timer = [NSTimer timerWithTimeInterval:1 invocation:[self invocation:@selector(timerFire) withArgument:nil] repeats:YES];
+    NSMethodSignature  *signature = [[self class] instanceMethodSignatureForSelector:@selector(timerFire)];
+    NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
+    invocation.target = self;
+    invocation.selector = @selector(timerFire);
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 invocation:[self invocation:@selector(timerFire) withArgument:nil] repeats:YES];
     
     // [NSTimer timer ...] 方式创建的timer 需要加入 一个runloop中timer才能生效
-    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+//    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
 }
 
 
@@ -105,51 +119,101 @@
 
 
 /**
- NSTimer与在子线程中运行
+ NSTimer与在子线程中运行,dispatch_async 存在内存泄露，NSTimer 无法在子线程中销毁，runloop不会结束，线程不能销毁。
  */
 - (void)test2
 {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [NSRunLoop currentRunLoop] runMode:<#(nonnull NSRunLoopMode)#> beforeDate:<#(nonnull NSDate *)#>;
+//        __strong __typeof(weakSelf) strongSelf = weakSelf;
+//        strongSelf.thread = [NSThread currentThread];
         // 子线程使用timer
         NSLog(@"%s - %@ - %@", __FUNCTION__, [NSThread currentThread], [NSRunLoop currentRunLoop]);
-        weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:[PLProxy1 proxyWithTarget:weakSelf] selector:@selector(timerFire) userInfo:nil repeats:YES];
+        weakSelf.timer = [NSTimer plScheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
         // 以上代码timer不会生效
         // 需要加入以下代码才会生效
         // 因为子线程的runloop默认不会运行，需要子线程的runloop 运行起来timer才会生效
-        [[NSRunLoop currentRunLoop] run];
+        NSLog(@"runloop begin");
+//        [[NSRunLoop currentRunLoop] run];
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        NSLog(@"runloop end");
+
     });
 }
+
 
 - (void)test3
 {
     // CFRunLoopTimerRef 是基于时间的触发器，它和 NSTimer 是toll-free bridged 的，可以混用。其包含一个时间长度和一个回调（函数指针）。当其加入到 RunLoop 时，RunLoop会注册对应的时间点，当时间点到时，RunLoop会被唤醒以执行那个回调。
     // 所以NSTimer不太准确，因为Timer依赖于runloop, 时间点到了，刚好runloop在处理其他事件，则会等处理完其他事件再来处理NSTimer事件。NSTimer 有个 属性tolerance，表示容忍时间，意思是runloop在处理其他事件超过这个容忍时间则放弃处理本次NSTimer事件，进入下一次时间点处理NStimer事件。
     
-    _thread = [[NSThread alloc] initWithTarget:self selector:@selector(treadSelector) object:nil];
+//    _thread = [[NSThread alloc] initWithTarget:self selector:@selector(treadSelector) object:nil];
+    
+    __weak typeof(self) weakSelf = self;
+    _thread = [[PLThread alloc] initWithBlock:^{
+        weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:[PLProxy1 proxyWithTarget:weakSelf] selector:@selector(timerFire) userInfo:nil repeats:YES];
+        NSLog(@"runloop start");
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        NSLog(@"runloop end");
+    }];;
     [_thread start];
 }
 
-#warning 问题 子线程内存泄露处理
-- (void)treadSelector
+- (void)test4
+{
+    
+    _thread = [[PLThread alloc] initWithTarget:[PLProxy1 proxyWithTarget:self] selector:@selector(threadMethod) object:nil];
+    [_thread start];
+
+}
+
+- (void)threadMethod
 {
     NSLog(@"%s - %@ ", __FUNCTION__, [NSThread currentThread]);
 
-    __weak typeof(self) weakSelf = self;
-    weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:[PLProxy1 proxyWithTarget:weakSelf] selector:@selector(timerFire) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] run];
+//    __weak typeof(self) weakSelf = self;
+    self.timer = [NSTimer plScheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
+    NSLog(@"runloop start");
+    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    NSLog(@"runloop end");
+}
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"点击 stopRunloop");
+    [self stopRunloop];
+    
 }
 
 - (void)timerFire
 {
-    NSLog(@"%s",__FUNCTION__);
+    NSLog(@"%s %@",__FUNCTION__, [NSThread currentThread]);
+}
+
+
+
+- (void)stopRunloop
+{
+    if (!_thread) {
+        return;
+    }
+    [self performSelector:@selector(__stop) onThread:self.thread withObject:nil waitUntilDone:YES];
+    
+}
+
+- (void)__stop
+{
+    [_timer invalidate];
+    _thread = nil;
 }
 
 - (void)dealloc
 {
-    [_timer invalidate];
-    NSLog(@"%s",__FUNCTION__);
+//    [_timer invalidate];
+    NSLog(@"start %s",__FUNCTION__);
+    [self stopRunloop];
+    NSLog(@"end %s",__FUNCTION__);
 }
 
 - (NSInvocation *)invocation:(SEL)aSelector withArgument:(id)anArgument
