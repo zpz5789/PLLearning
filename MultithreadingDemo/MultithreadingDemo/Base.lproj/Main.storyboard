@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QOw-oe-sXY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QOw-oe-sXY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-QW-A4K">
-                                <rect key="frame" x="146.5" y="208" width="83" height="30"/>
+                                <rect key="frame" x="146" y="208" width="83" height="30"/>
                                 <state key="normal" title="NSOpeation"/>
                                 <connections>
                                     <segue destination="gE6-vj-tR9" kind="show" id="mNF-DA-FF9"/>
@@ -43,6 +42,13 @@
                                     <segue destination="5xm-Ae-TIC" kind="show" id="JMY-wr-rCg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMr-zi-Ha3" userLabel="Lock">
+                                <rect key="frame" x="171" y="318" width="33" height="30"/>
+                                <state key="normal" title="Lock"/>
+                                <connections>
+                                    <segue destination="yfq-Ds-npI" kind="show" id="dFU-3q-09U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -53,7 +59,9 @@
                             <constraint firstItem="QgF-Q6-zft" firstAttribute="width" secondItem="cMx-QW-A4K" secondAttribute="width" id="Jso-55-c8o"/>
                             <constraint firstItem="QgF-Q6-zft" firstAttribute="top" secondItem="cMx-QW-A4K" secondAttribute="bottom" constant="28" id="REg-ai-NaC"/>
                             <constraint firstItem="Ooh-Xv-E0O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="VtS-U6-ea7"/>
+                            <constraint firstItem="DMr-zi-Ha3" firstAttribute="top" secondItem="QgF-Q6-zft" secondAttribute="bottom" constant="22" id="bXE-xv-m6Y"/>
                             <constraint firstItem="cMx-QW-A4K" firstAttribute="top" secondItem="Ooh-Xv-E0O" secondAttribute="bottom" constant="26" id="jma-fY-8PO"/>
+                            <constraint firstItem="DMr-zi-Ha3" firstAttribute="centerX" secondItem="QgF-Q6-zft" secondAttribute="centerX" id="kWY-sj-IQZ"/>
                             <constraint firstItem="cMx-QW-A4K" firstAttribute="width" secondItem="Ooh-Xv-E0O" secondAttribute="width" id="lhk-ux-Kym"/>
                             <constraint firstItem="cMx-QW-A4K" firstAttribute="height" secondItem="Ooh-Xv-E0O" secondAttribute="height" id="xv6-KI-byr"/>
                         </constraints>
@@ -79,6 +87,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHD-N1-M41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1498" y="766"/>
+        </scene>
+        <!--Lock-->
+        <scene sceneID="gSL-fu-iq0">
+            <objects>
+                <viewController title="Lock" id="yfq-Ds-npI" customClass="PLLocksController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f5O-Sb-S5A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wd0-K6-Mo2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BpG-C3-7zY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="766"/>
         </scene>
         <!--NSOpeation-->
         <scene sceneID="75D-Es-h0t">
