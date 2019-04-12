@@ -29,6 +29,8 @@
 		9CD32B4721368F5000656ED1 /* NSTheadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD32B4621368F5000656ED1 /* NSTheadController.m */; };
 		9CD32B4A21368F6200656ED1 /* NSOpeationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD32B4921368F6200656ED1 /* NSOpeationController.m */; };
 		9CD32B4D21368F7000656ED1 /* GCDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD32B4C21368F7000656ED1 /* GCDController.m */; };
+		9CE93A1422523FFD007CCE07 /* ReadWriteSecurityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE93A1322523FFD007CCE07 /* ReadWriteSecurityController.m */; };
+		9CE93A172252F87B007CCE07 /* PLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE93A162252F87B007CCE07 /* PLOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,10 @@
 		9CD32B4921368F6200656ED1 /* NSOpeationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOpeationController.m; sourceTree = "<group>"; };
 		9CD32B4B21368F7000656ED1 /* GCDController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDController.h; sourceTree = "<group>"; };
 		9CD32B4C21368F7000656ED1 /* GCDController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDController.m; sourceTree = "<group>"; };
+		9CE93A1222523FFD007CCE07 /* ReadWriteSecurityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadWriteSecurityController.h; sourceTree = "<group>"; };
+		9CE93A1322523FFD007CCE07 /* ReadWriteSecurityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadWriteSecurityController.m; sourceTree = "<group>"; };
+		9CE93A152252F87B007CCE07 /* PLOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLOperation.h; sourceTree = "<group>"; };
+		9CE93A162252F87B007CCE07 /* PLOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,10 +184,14 @@
 				9CD32B4621368F5000656ED1 /* NSTheadController.m */,
 				9CD32B4821368F6200656ED1 /* NSOpeationController.h */,
 				9CD32B4921368F6200656ED1 /* NSOpeationController.m */,
+				9CE93A152252F87B007CCE07 /* PLOperation.h */,
+				9CE93A162252F87B007CCE07 /* PLOperation.m */,
 				9CD32B4B21368F7000656ED1 /* GCDController.h */,
 				9CD32B4C21368F7000656ED1 /* GCDController.m */,
 				9C27EE7F2245D97200A6D6FB /* PLLocksController.h */,
 				9C27EE802245D97200A6D6FB /* PLLocksController.m */,
+				9CE93A1222523FFD007CCE07 /* ReadWriteSecurityController.h */,
+				9CE93A1322523FFD007CCE07 /* ReadWriteSecurityController.m */,
 				9C27EE7B2245D7D200A6D6FB /* LockDemo */,
 				9CD32B1821368B5900656ED1 /* Main.storyboard */,
 				9CD32B1B21368B5B00656ED1 /* Assets.xcassets */,
@@ -349,9 +359,11 @@
 				9C27EE812245D97200A6D6FB /* PLLocksController.m in Sources */,
 				9C6828A82251C70A00C43A08 /* NSConditionDemo.m in Sources */,
 				9C6828AB2252053B00C43A08 /* NSConditionLockDemo.m in Sources */,
+				9CE93A1422523FFD007CCE07 /* ReadWriteSecurityController.m in Sources */,
 				9CD32B4721368F5000656ED1 /* NSTheadController.m in Sources */,
 				9C6828A52251C5BE00C43A08 /* NSLockDemo.m in Sources */,
 				9CD32B2221368B5B00656ED1 /* main.m in Sources */,
+				9CE93A172252F87B007CCE07 /* PLOperation.m in Sources */,
 				9C68289F2251B2DB00C43A08 /* OSUnfairLockDemo.m in Sources */,
 				9C27EE7E2245D7FC00A6D6FB /* PLBaseLockDemo.m in Sources */,
 				9CD32B4D21368F7000656ED1 /* GCDController.m in Sources */,
