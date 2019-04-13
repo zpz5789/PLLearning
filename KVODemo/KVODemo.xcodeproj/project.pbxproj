@@ -16,6 +16,7 @@
 		9C3AD066225C2BE50059567D /* KVODemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AD065225C2BE50059567D /* KVODemoTests.m */; };
 		9C3AD071225C2BE50059567D /* KVODemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AD070225C2BE50059567D /* KVODemoUITests.m */; };
 		9C3AD080225C31B10059567D /* PLPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AD07F225C31B10059567D /* PLPerson.m */; };
+		9C8EC05F2261E3960042A1AA /* NSObject+Block_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC05E2261E3960042A1AA /* NSObject+Block_KVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		9C3AD07F225C31B10059567D /* PLPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLPerson.m; sourceTree = "<group>"; };
 		9C3AD081225C36900059567D /* NSKVONotifying_PLPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSKVONotifying_PLPerson.h; sourceTree = "<group>"; };
 		9C3AD082225C36900059567D /* NSKVONotifying_PLPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSKVONotifying_PLPerson.m; sourceTree = "<group>"; };
+		9C8EC05D2261E3960042A1AA /* NSObject+Block_KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Block_KVO.h"; sourceTree = "<group>"; };
+		9C8EC05E2261E3960042A1AA /* NSObject+Block_KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Block_KVO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				9C3AD07F225C31B10059567D /* PLPerson.m */,
 				9C3AD081225C36900059567D /* NSKVONotifying_PLPerson.h */,
 				9C3AD082225C36900059567D /* NSKVONotifying_PLPerson.m */,
+				9C8EC05D2261E3960042A1AA /* NSObject+Block_KVO.h */,
+				9C8EC05E2261E3960042A1AA /* NSObject+Block_KVO.m */,
 				9C3AD052225C2BE30059567D /* Main.storyboard */,
 				9C3AD055225C2BE50059567D /* Assets.xcassets */,
 				9C3AD057225C2BE50059567D /* LaunchScreen.storyboard */,
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8EC05F2261E3960042A1AA /* NSObject+Block_KVO.m in Sources */,
 				9C3AD080225C31B10059567D /* PLPerson.m in Sources */,
 				9C3AD051225C2BE30059567D /* ViewController.m in Sources */,
 				9C3AD05C225C2BE50059567D /* main.m in Sources */,

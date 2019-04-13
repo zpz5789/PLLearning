@@ -12,6 +12,7 @@
 - (void)setAge:(int)age
 {
     _NSSetIntValueAndNotify();
+//    _NSSetDoubleValueAndNotify()
 }
 
 // 伪代码

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "PLPerson.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
+#import "NSObject+Block_KVO.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) PLPerson *person;
@@ -73,15 +75,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.person = [[PLPerson alloc] init];
-    [self.person addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew context:@"123"];
+//    [self.person addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew context:@"123"];
     // personRealClass = NSKVONotifying_PLPerson
     Class personRealClass = object_getClass(self.person);
     // NSKVONotifying_PLPerson setAge:, class, dealloc, _isKVOA 内部重写了这4个方法
-    [self printMethodNamesOfClass:personRealClass];
+//    [self printMethodNamesOfClass:personRealClass];
     // supClass = MJPerson
-    Class supClass = class_getSuperclass(object_getClass(self.person));
+//    Class supClass = class_getSuperclass(object_getClass(self.person));
     // iSA交换技术
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.person PL_addObserver:self forKey:@"age" withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
+        NSLog(@"%@ %@ %@ %@", observedObject, observedObject, oldValue, newValue);
+    }];
+    
+    self.person.age = 10;
+}
+
+- (void)addSubviewTemp:(UIView *)view with:(NSString *)temp
+{
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
