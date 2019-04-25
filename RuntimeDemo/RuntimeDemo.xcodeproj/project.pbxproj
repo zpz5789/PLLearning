@@ -19,6 +19,7 @@
 		9C9F69662265D10700F0AFFA /* 屏幕快照 2019-04-16 16.59.15.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F69652265D10700F0AFFA /* 屏幕快照 2019-04-16 16.59.15.png */; };
 		9C9F69682265D16500F0AFFA /* 屏幕快照 2019-04-16 17.01.00.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F69672265D16500F0AFFA /* 屏幕快照 2019-04-16 17.01.00.png */; };
 		9C9F696A2265D17100F0AFFA /* 屏幕快照 2019-04-16 17.01.11.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F69692265D17100F0AFFA /* 屏幕快照 2019-04-16 17.01.11.png */; };
+		9CEEB3302266256900083C61 /* 图片 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CEEB32D2266256900083C61 /* 图片 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		9C9F69652265D10700F0AFFA /* 屏幕快照 2019-04-16 16.59.15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2019-04-16 16.59.15.png"; sourceTree = "<group>"; };
 		9C9F69672265D16500F0AFFA /* 屏幕快照 2019-04-16 17.01.00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2019-04-16 17.01.00.png"; sourceTree = "<group>"; };
 		9C9F69692265D17100F0AFFA /* 屏幕快照 2019-04-16 17.01.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2019-04-16 17.01.11.png"; sourceTree = "<group>"; };
+		9CEEB32D2266256900083C61 /* 图片 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图片 1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				9C9F69652265D10700F0AFFA /* 屏幕快照 2019-04-16 16.59.15.png */,
 				9C9F69672265D16500F0AFFA /* 屏幕快照 2019-04-16 17.01.00.png */,
 				9C9F69692265D17100F0AFFA /* 屏幕快照 2019-04-16 17.01.11.png */,
+				9CEEB32D2266256900083C61 /* 图片 1.png */,
 				9C7F3F9E2264154E006FAC85 /* Main.storyboard */,
 				9C7F3FA122641550006FAC85 /* Assets.xcassets */,
 				9C7F3FA322641550006FAC85 /* LaunchScreen.storyboard */,
@@ -560,6 +563,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEEB3302266256900083C61 /* 图片 1.png in Resources */,
 				9C9F69682265D16500F0AFFA /* 屏幕快照 2019-04-16 17.01.00.png in Resources */,
 				9C7F3FA522641550006FAC85 /* LaunchScreen.storyboard in Resources */,
 				9C9F69662265D10700F0AFFA /* 屏幕快照 2019-04-16 16.59.15.png in Resources */,

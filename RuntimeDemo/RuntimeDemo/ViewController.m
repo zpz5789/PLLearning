@@ -152,6 +152,36 @@
  [super message] 的底层实现
  1、消息接受者仍然是子类对象、
  2、查找方法从父类开始。
+ 
+ 
+ isMemberOfClass 和 isKindOfClass 区别
+ + isMemberOfClass isKindOfClass 元类比较
+ - isMemberOfClass isKindOfClass 类比较
+ 
+ - (BOOL)isMemberOfClass:(Class)cls {
+     return [self class] == cls;
+ }
+ 
+ - (BOOL)isKindOfClass:(Class)cls {
+     for (Class tcls = [self class]; tcls; tcls = tcls->superclass) {
+         if (tcls == cls) return YES;
+     }
+     return NO;
+ }
+ 
+ 
+ + (BOOL)isMemberOfClass:(Class)cls {
+     return object_getClass((id)self) == cls;
+ }
+ 
+ 
+ + (BOOL)isKindOfClass:(Class)cls {
+     for (Class tcls = object_getClass((id)self); tcls; tcls = tcls->superclass) {
+         if (tcls == cls) return YES;
+     }
+     return NO;
+ }
+
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -167,5 +197,10 @@
 //    object_isClass(self);
 }
 
+
+- (void)test
+{
+    
+}
 
 @end
