@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../Desktop/&#x672c;&#x5730;&#x4ed3;&#x5e93;&#x6d4b;&#x8bd5;/NodeTest/PZBubbleWindow/PZBubbleWindow.xcodeproj">
+      location = "group:PZBubbleWindow/PZBubbleWindow.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:SwiftGrammarDemo/SwiftGrammarDemo.xcodeproj">
