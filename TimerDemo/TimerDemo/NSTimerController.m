@@ -33,10 +33,10 @@
     [super viewDidLoad];
     
 //    [self test];
-//    [self test1];
+    [self test1];
 //    [self test2];
 //    [self test3];
-    [self test4];
+//    [self test4];
 }
 
 
@@ -109,14 +109,24 @@
      
      这种方式在iOS10 系统给出了方法
      */
-    __weak typeof(self) weakSelf = self;
-    self.timer = [NSTimer pl_scheduledTimerWithTimeInterval:1 block:^{
-//        NSLog(@"block timer --- ");
-        [weakSelf timerFire];
-    } repeats:YES];
+//    __weak typeof(self) weakSelf = self;
+//    self.timer = [NSTimer pl_scheduledTimerWithTimeInterval:1 block:^{
+////        NSLog(@"block timer --- ");
+//        [weakSelf timerFire];
+//    } repeats:YES];
 
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerSelector) userInfo:nil repeats:YES];
 }
 
+- (void)timerSelector {
+    NSLog(@"timerSelector");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
+    self.timer = nil;
+}
 
 /**
  NSTimer与在子线程中运行,dispatch_async 存在内存泄露，NSTimer 无法在子线程中销毁，runloop不会结束，线程不能销毁。
