@@ -15,6 +15,25 @@
 		9C79659D1F290A09009BF0E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C79659B1F290A09009BF0E4 /* LaunchScreen.storyboard */; };
 		9C7965A81F290A09009BF0E4 /* AnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7965A71F290A09009BF0E4 /* AnimationDemoTests.m */; };
 		9C7965B31F290A09009BF0E4 /* AnimationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7965B21F290A09009BF0E4 /* AnimationDemoUITests.m */; };
+		9CA26120240AAEAA0018C50F /* PAGPPreViewBigImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2611F240AAEAA0018C50F /* PAGPPreViewBigImageView.m */; };
+		9CA26123240B56390018C50F /* PAGPImagePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA26122240B56380018C50F /* PAGPImagePreviewView.m */; };
+		9CA2612A240B61180018C50F /* WechatIMG309.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26124240B61160018C50F /* WechatIMG309.jpeg */; };
+		9CA2612B240B61180018C50F /* WechatIMG308.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26125240B61170018C50F /* WechatIMG308.jpeg */; };
+		9CA2612C240B61180018C50F /* WechatIMG306.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26126240B61170018C50F /* WechatIMG306.jpeg */; };
+		9CA2612D240B61180018C50F /* WechatIMG310.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26127240B61170018C50F /* WechatIMG310.jpeg */; };
+		9CA2612E240B61180018C50F /* WechatIMG311.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26128240B61170018C50F /* WechatIMG311.jpeg */; };
+		9CA2612F240B61180018C50F /* WechatIMG307.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26129240B61180018C50F /* WechatIMG307.jpeg */; };
+		9CA26131240B67400018C50F /* xxxxxx5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26130240B67400018C50F /* xxxxxx5.png */; };
+		9CA26133240B67480018C50F /* xxxxxx4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26132240B67480018C50F /* xxxxxx4.png */; };
+		9CA26135240B675A0018C50F /* xxxxxx3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26134240B675A0018C50F /* xxxxxx3.png */; };
+		9CA26137240B67660018C50F /* xxxxxx2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26136240B67660018C50F /* xxxxxx2.png */; };
+		9CA26139240B67830018C50F /* xxxxxx1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA26138240B67830018C50F /* xxxxxx1.png */; };
+		9CA26147240B87AE0018C50F /* LYPictureBrowsePercentDrivenInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2613D240B87AC0018C50F /* LYPictureBrowsePercentDrivenInteractive.m */; };
+		9CA26148240B87AE0018C50F /* LYPictureBrowsePopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2613E240B87AC0018C50F /* LYPictureBrowsePopAnimator.m */; };
+		9CA26149240B87AE0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA26141240B87AC0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.m */; };
+		9CA2614A240B87AE0018C50F /* LYPictureBrowsePushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA26145240B87AD0018C50F /* LYPictureBrowsePushAnimator.m */; };
+		9CA2614B240B87AE0018C50F /* LYPictureBrowseTransitionParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA26146240B87AD0018C50F /* LYPictureBrowseTransitionParameter.m */; };
+		9CA26151240B8FCD0018C50F /* PAGPImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA26150240B8FCD0018C50F /* PAGPImageBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +70,33 @@
 		9C7965AE1F290A09009BF0E4 /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7965B21F290A09009BF0E4 /* AnimationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationDemoUITests.m; sourceTree = "<group>"; };
 		9C7965B41F290A09009BF0E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA2611E240AAEAA0018C50F /* PAGPPreViewBigImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAGPPreViewBigImageView.h; sourceTree = "<group>"; };
+		9CA2611F240AAEAA0018C50F /* PAGPPreViewBigImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAGPPreViewBigImageView.m; sourceTree = "<group>"; };
+		9CA26121240B56380018C50F /* PAGPImagePreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAGPImagePreviewView.h; sourceTree = "<group>"; };
+		9CA26122240B56380018C50F /* PAGPImagePreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAGPImagePreviewView.m; sourceTree = "<group>"; };
+		9CA26124240B61160018C50F /* WechatIMG309.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG309.jpeg; sourceTree = "<group>"; };
+		9CA26125240B61170018C50F /* WechatIMG308.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG308.jpeg; sourceTree = "<group>"; };
+		9CA26126240B61170018C50F /* WechatIMG306.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG306.jpeg; sourceTree = "<group>"; };
+		9CA26127240B61170018C50F /* WechatIMG310.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG310.jpeg; sourceTree = "<group>"; };
+		9CA26128240B61170018C50F /* WechatIMG311.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG311.jpeg; sourceTree = "<group>"; };
+		9CA26129240B61180018C50F /* WechatIMG307.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG307.jpeg; sourceTree = "<group>"; };
+		9CA26130240B67400018C50F /* xxxxxx5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxxxx5.png; sourceTree = "<group>"; };
+		9CA26132240B67480018C50F /* xxxxxx4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxxxx4.png; sourceTree = "<group>"; };
+		9CA26134240B675A0018C50F /* xxxxxx3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxxxx3.png; sourceTree = "<group>"; };
+		9CA26136240B67660018C50F /* xxxxxx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxxxx2.png; sourceTree = "<group>"; };
+		9CA26138240B67830018C50F /* xxxxxx1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxxxx1.png; sourceTree = "<group>"; };
+		9CA2613D240B87AC0018C50F /* LYPictureBrowsePercentDrivenInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPictureBrowsePercentDrivenInteractive.m; sourceTree = "<group>"; };
+		9CA2613E240B87AC0018C50F /* LYPictureBrowsePopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPictureBrowsePopAnimator.m; sourceTree = "<group>"; };
+		9CA2613F240B87AC0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPictureBrowseInteractiveAnimatedTransition.h; sourceTree = "<group>"; };
+		9CA26140240B87AC0018C50F /* LYPictureBrowsePopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPictureBrowsePopAnimator.h; sourceTree = "<group>"; };
+		9CA26141240B87AC0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPictureBrowseInteractiveAnimatedTransition.m; sourceTree = "<group>"; };
+		9CA26142240B87AD0018C50F /* LYPictureBrowseTransitionParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPictureBrowseTransitionParameter.h; sourceTree = "<group>"; };
+		9CA26143240B87AD0018C50F /* LYPictureBrowsePercentDrivenInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPictureBrowsePercentDrivenInteractive.h; sourceTree = "<group>"; };
+		9CA26144240B87AD0018C50F /* LYPictureBrowsePushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPictureBrowsePushAnimator.h; sourceTree = "<group>"; };
+		9CA26145240B87AD0018C50F /* LYPictureBrowsePushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPictureBrowsePushAnimator.m; sourceTree = "<group>"; };
+		9CA26146240B87AD0018C50F /* LYPictureBrowseTransitionParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPictureBrowseTransitionParameter.m; sourceTree = "<group>"; };
+		9CA2614F240B8FCD0018C50F /* PAGPImageBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAGPImageBrowser.h; sourceTree = "<group>"; };
+		9CA26150240B8FCD0018C50F /* PAGPImageBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAGPImageBrowser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +147,37 @@
 		9C79658C1F290A09009BF0E4 /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9CA26138240B67830018C50F /* xxxxxx1.png */,
+				9CA26136240B67660018C50F /* xxxxxx2.png */,
+				9CA26134240B675A0018C50F /* xxxxxx3.png */,
+				9CA26132240B67480018C50F /* xxxxxx4.png */,
+				9CA26130240B67400018C50F /* xxxxxx5.png */,
+				9CA26126240B61170018C50F /* WechatIMG306.jpeg */,
+				9CA26129240B61180018C50F /* WechatIMG307.jpeg */,
+				9CA26125240B61170018C50F /* WechatIMG308.jpeg */,
+				9CA26124240B61160018C50F /* WechatIMG309.jpeg */,
+				9CA26127240B61170018C50F /* WechatIMG310.jpeg */,
+				9CA26128240B61170018C50F /* WechatIMG311.jpeg */,
+				9CA26142240B87AD0018C50F /* LYPictureBrowseTransitionParameter.h */,
+				9CA26146240B87AD0018C50F /* LYPictureBrowseTransitionParameter.m */,
+				9CA2613F240B87AC0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.h */,
+				9CA26141240B87AC0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.m */,
+				9CA26143240B87AD0018C50F /* LYPictureBrowsePercentDrivenInteractive.h */,
+				9CA2613D240B87AC0018C50F /* LYPictureBrowsePercentDrivenInteractive.m */,
+				9CA26144240B87AD0018C50F /* LYPictureBrowsePushAnimator.h */,
+				9CA26145240B87AD0018C50F /* LYPictureBrowsePushAnimator.m */,
+				9CA26140240B87AC0018C50F /* LYPictureBrowsePopAnimator.h */,
+				9CA2613E240B87AC0018C50F /* LYPictureBrowsePopAnimator.m */,
 				9C7965901F290A09009BF0E4 /* AppDelegate.h */,
 				9C7965911F290A09009BF0E4 /* AppDelegate.m */,
 				9C7965931F290A09009BF0E4 /* ViewController.h */,
 				9C7965941F290A09009BF0E4 /* ViewController.m */,
+				9CA2614F240B8FCD0018C50F /* PAGPImageBrowser.h */,
+				9CA26150240B8FCD0018C50F /* PAGPImageBrowser.m */,
+				9CA26121240B56380018C50F /* PAGPImagePreviewView.h */,
+				9CA26122240B56380018C50F /* PAGPImagePreviewView.m */,
+				9CA2611E240AAEAA0018C50F /* PAGPPreViewBigImageView.h */,
+				9CA2611F240AAEAA0018C50F /* PAGPPreViewBigImageView.m */,
 				9C7965961F290A09009BF0E4 /* Main.storyboard */,
 				9C7965991F290A09009BF0E4 /* Assets.xcassets */,
 				9C79659B1F290A09009BF0E4 /* LaunchScreen.storyboard */,
@@ -207,6 +280,7 @@
 				TargetAttributes = {
 					9C7965891F290A09009BF0E4 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 28JPV368T2;
 						ProvisioningStyle = Automatic;
 					};
 					9C7965A21F290A09009BF0E4 = {
@@ -226,6 +300,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -246,9 +321,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA26135240B675A0018C50F /* xxxxxx3.png in Resources */,
 				9C79659D1F290A09009BF0E4 /* LaunchScreen.storyboard in Resources */,
+				9CA26133240B67480018C50F /* xxxxxx4.png in Resources */,
+				9CA2612C240B61180018C50F /* WechatIMG306.jpeg in Resources */,
 				9C79659A1F290A09009BF0E4 /* Assets.xcassets in Resources */,
+				9CA26139240B67830018C50F /* xxxxxx1.png in Resources */,
+				9CA2612E240B61180018C50F /* WechatIMG311.jpeg in Resources */,
+				9CA2612B240B61180018C50F /* WechatIMG308.jpeg in Resources */,
+				9CA2612A240B61180018C50F /* WechatIMG309.jpeg in Resources */,
+				9CA2612D240B61180018C50F /* WechatIMG310.jpeg in Resources */,
+				9CA2612F240B61180018C50F /* WechatIMG307.jpeg in Resources */,
+				9CA26131240B67400018C50F /* xxxxxx5.png in Resources */,
 				9C7965981F290A09009BF0E4 /* Main.storyboard in Resources */,
+				9CA26137240B67660018C50F /* xxxxxx2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +359,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA26149240B87AE0018C50F /* LYPictureBrowseInteractiveAnimatedTransition.m in Sources */,
 				9C7965951F290A09009BF0E4 /* ViewController.m in Sources */,
 				9C7965921F290A09009BF0E4 /* AppDelegate.m in Sources */,
+				9CA26148240B87AE0018C50F /* LYPictureBrowsePopAnimator.m in Sources */,
+				9CA2614B240B87AE0018C50F /* LYPictureBrowseTransitionParameter.m in Sources */,
+				9CA26123240B56390018C50F /* PAGPImagePreviewView.m in Sources */,
+				9CA26120240AAEAA0018C50F /* PAGPPreViewBigImageView.m in Sources */,
+				9CA26147240B87AE0018C50F /* LYPictureBrowsePercentDrivenInteractive.m in Sources */,
+				9CA2614A240B87AE0018C50F /* LYPictureBrowsePushAnimator.m in Sources */,
 				9C79658F1F290A09009BF0E4 /* main.m in Sources */,
+				9CA26151240B8FCD0018C50F /* PAGPImageBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 28JPV368T2;
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zpz.AnimationDemo;
@@ -435,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 28JPV368T2;
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zpz.AnimationDemo;
@@ -507,6 +603,7 @@
 				9C7965B91F290A09009BF0E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C7965BA1F290A09009BF0E4 /* Build configuration list for PBXNativeTarget "AnimationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +612,7 @@
 				9C7965BC1F290A09009BF0E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C7965BD1F290A09009BF0E4 /* Build configuration list for PBXNativeTarget "AnimationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +621,7 @@
 				9C7965BF1F290A09009BF0E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@
 #import "RunLoopController2.h"
 #import "RunLoopController3.h"
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+- (IBAction)buttonClick:(id)sender;
 
 @end
 
@@ -81,5 +82,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     
+}
+- (IBAction)buttonClick:(id)sender {
 }
 @end

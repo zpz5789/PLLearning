@@ -17,6 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"%@",self.window);
+//    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(40, 30, 50, 50)];
+//    view1.backgroundColor = [UIColor redColor];
+//    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(80, 400, 50, 200)];
+//    view2.backgroundColor = [UIColor greenColor];
+//    
+//    [[UIApplication sharedApplication].delegate.window addSubview:view1];
+//    [[UIApplication sharedApplication].delegate.window addSubview:view2];
+//    
+//    view2.layer.zPosition = 10000;
+
     return YES;
 }
 
