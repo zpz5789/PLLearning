@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PLLayoutDemo</string>
+    <string name="text2">Activity Main 2</string>
+    <string name="hello">你好， 世界</string>
+
+</resources>
