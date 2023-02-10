@@ -23,4 +23,17 @@
         android:layout_height="wrap_content"
         android:text="你好，Android"
         android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="你好，Android"
+        android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/tv_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好，Android"
+        android:textSize="30sp"
+        android:textColor="@color/green"/>
 </LinearLayout>
