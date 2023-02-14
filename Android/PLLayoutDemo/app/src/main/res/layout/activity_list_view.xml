@@ -8,6 +8,12 @@ android:gravity="center">
 <ListView
     android:id="@+id/list_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="200dp"
     />
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"/>
+    
 </LinearLayout>

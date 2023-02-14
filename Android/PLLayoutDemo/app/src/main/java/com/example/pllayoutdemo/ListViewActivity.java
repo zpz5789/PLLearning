@@ -1,6 +1,9 @@
 package com.example.pllayoutdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -11,10 +14,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.pllayoutdemo.adapter.FruitAdapter;
+import com.example.pllayoutdemo.adapter.ReCyclerFruitAdapter;
 import com.example.pllayoutdemo.bean.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ListViewActivity extends AppCompatActivity {
 
@@ -31,11 +36,10 @@ public class ListViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
+
+        initFruits();
+
         ListView listView = findViewById(R.id.list_view);
-
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
-//        listView.setAdapter(adapter);
-
         FruitAdapter adapter = new FruitAdapter(this, R.layout.fruit_item, fruitList);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -46,18 +50,39 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
 
+//        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        recyclerView.setLayoutManager(layoutManager);
+//        ReCyclerFruitAdapter adapter1 = new ReCyclerFruitAdapter(fruitList);
+//        recyclerView.setAdapter(adapter1);
 
-        initFruits();
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        ReCyclerFruitAdapter adapter1 = new ReCyclerFruitAdapter(fruitList);
+        recyclerView.setAdapter(adapter1);
     }
 
     private void initFruits() {
         for (int i = 0; i < 5; i++) {
-            Fruit apple = new Fruit("apple", R.drawable.ic_launcher_foreground);
+            Fruit apple = new Fruit(getRandomLengthName("apple"), R.drawable.ic_launcher_foreground);
             fruitList.add(apple);
-            Fruit bananer = new Fruit("bananer", R.drawable.ic_launcher_background);
+            Fruit bananer = new Fruit(getRandomLengthName("bananer"), R.drawable.ic_launcher_background);
             fruitList.add(bananer);
-            Fruit orange = new Fruit("orange", R.drawable.image_20210714212945164);
-            fruitList.add(orange);
+//            Fruit orange = new Fruit("orange", R.drawable.image_20210714212945164);
+//            fruitList.add(orange);
         }
+    }
+
+    private String getRandomLengthName(String name) {
+        Random random = new Random();
+        int length = random.nextInt(20) + 1;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            builder.append(name);
+        }
+        return builder.toString();
     }
 }
