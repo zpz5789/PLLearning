@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import androidx.appcompat.widget.Toolbar;
 
 public class SharedPreferencesActivity extends AppCompatActivity {
 
@@ -14,6 +15,11 @@ public class SharedPreferencesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shared_preferences);
+
+        Toolbar myToolbar =  findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+
         Button saveData = (Button) findViewById(R.id.save_data1);
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override

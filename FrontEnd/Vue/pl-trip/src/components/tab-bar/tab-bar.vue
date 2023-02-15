@@ -1,8 +1,9 @@
 <template>
     <div class="tab-bar">
        <template v-for="(item, index) in tabbarData">
-        <div class="tab-bar-item">
-            <img :src="getAssetURL(item.image)">
+        <div class="tab-bar-item" :class="{ active: currentIndex === index}" @click="itemClick(index, item)">
+            <img v-if="currentIndex !== index" :src="getAssetURL(item.image)">
+            <img v-else :src="getAssetURL(item.imageActive)">
             <span>{{item.text}}</span>
         </div>
        </template>
@@ -10,9 +11,18 @@
 </template>
  
 <script setup>
+
 import tabbarData from '@/assets/data/tabbar';
 import {getAssetURL} from "@/utils/load_assets"
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const currentIndex = ref(0)
+const router = useRouter()
+const itemClick = (index, item) => {
+    currentIndex.value = index
+    router.push(item.path)
+}
 
 </script>
  
@@ -32,6 +42,10 @@ import {getAssetURL} from "@/utils/load_assets"
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        &.active {
+            color: var(--primary-color);
+        }
 
         img {
             width: 36px;
