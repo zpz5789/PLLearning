@@ -2,5 +2,10 @@
     <string name="app_name">PLLayoutDemo</string>
     <string name="text2">Activity Main 2</string>
     <string name="hello">你好， 世界</string>
+    <string name="MakeCall">拨号</string>
+    <string name="AddData">添加数据</string>
+    <string name="UpdataData">更新数据</string>
+    <string name="DeleteData">删除数据</string>
+    <string name="QueryData">查询数据</string>
 
 </resources>
