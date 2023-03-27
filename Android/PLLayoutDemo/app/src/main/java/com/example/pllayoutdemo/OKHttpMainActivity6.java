@@ -24,7 +24,6 @@ public class OKHttpMainActivity6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_okhttp_main6);
-
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +33,6 @@ public class OKHttpMainActivity6 extends AppCompatActivity {
         });
         okHttpClient = new OkHttpClient();
     }
-
-
 
     public void getRequestSync() {
         new Thread(){
@@ -52,9 +49,8 @@ public class OKHttpMainActivity6 extends AppCompatActivity {
                 }
             }
         }.start();
-
-
     }
+
     public void getRequestASync() {
         new Thread(){
             @Override
@@ -76,8 +72,8 @@ public class OKHttpMainActivity6 extends AppCompatActivity {
                 });
             }
         }.start();
-
     }
+
     public void postRequestSync() {
         new Thread(){
             @Override
@@ -95,6 +91,7 @@ public class OKHttpMainActivity6 extends AppCompatActivity {
             }
         }.start();
     }
+
     public void postRequestASync() {
         new Thread(){
             @Override
@@ -105,18 +102,22 @@ public class OKHttpMainActivity6 extends AppCompatActivity {
                 call.enqueue(new Callback() {
                     @Override
                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
-
                     }
-
                     @Override
                     public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                         if (response.isSuccessful()) {
                             Log.d("TAG", response.body().string());
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // 主线程操作，如弹UI toast等
+                                }
+                            });
                         }
                     }
                 });
             }
         }.start();
-
     }
 }
