@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 添加依赖 -->
+    <!-- 依赖三个包 -->
+    <!-- CDN引入 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+    
+    function foo() {
+            console.log(this.a);
+    }
+
+    let element = <div>哈哈哈</div>
+    console.log(element)
+
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            count: 0,
+          };
+          this.add = this.add.bind(this);
+          this.min = this.min.bind(this);
+        }
+
+        add() {
+          this.setState({
+            count: this.state.count + 1,
+          });
+        }
+
+        min() {
+          this.setState({
+            count: this.state.count - 1,
+          });
+        }
+
+        render() {
+          const { count } = this.state;
+          return (
+            <div>
+              hahaha
+              <h2>当前计数：{count}</h2>
+              <button onClick={this.add}>+1</button>
+              <button onClick={this.min}>-1</button>
+            </div>
+          );
+        }
+      }
+
+      const root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
