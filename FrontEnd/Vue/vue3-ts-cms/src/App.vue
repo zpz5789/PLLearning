@@ -1,6 +1,17 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+interface IKun {
+  name: string
+  age: string
+}
+
+const ikun: IKun = {
+  name: 'koko',
+  age: 'HashChangeEvent'
+}
+console.log(ikun)
 </script>
 
 <template>
