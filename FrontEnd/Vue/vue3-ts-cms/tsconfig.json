@@ -7,5 +7,9 @@
     {
       "path": "./tsconfig.app.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "types": ["element-plus/global"]
+  },
+  "include": ["src/**/*","scr/**/*.vue","env.d.ts","auto-imports.d.ts", "components.d.ts"],
 }
